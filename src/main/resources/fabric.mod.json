@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "lightningflash",
+  "version": "${version}",
+
+  "name": "Lightning Flash White",
+  "description": "Makes mobs flash white when struck by lightning",
+  "authors": [],
+  "contact": {},
+
+  "license": "All-Rights-Reserved",
+  "icon": "assets/lightningflash/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": ["dev.creoii.lightningflash.LightningFlash"],
+    "client": ["dev.creoii.lightningflash.client.LightningFlashClient"]
+  },
+
+  "mixins": [
+    "lightningflash.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
