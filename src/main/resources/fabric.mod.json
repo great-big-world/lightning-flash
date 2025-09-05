@@ -3,7 +3,7 @@
   "id": "lightningflash",
   "version": "${version}",
 
-  "name": "Lightning Flash White",
+  "name": "Lightning Flash",
   "description": "Makes mobs flash white when struck by lightning",
   "authors": [],
   "contact": {},
@@ -25,5 +25,14 @@
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}"
+  },
+  "custom": {
+    "modmenu": {
+      "parent": {
+        "id": "great_big_world",
+        "name": "Great Big World",
+        "description": ""
+      }
+    }
   }
 }
