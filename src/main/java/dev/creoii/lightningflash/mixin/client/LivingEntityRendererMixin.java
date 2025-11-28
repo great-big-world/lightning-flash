@@ -36,7 +36,7 @@ public class LivingEntityRendererMixin {
     @WrapOperation(method = "render(Lnet/minecraft/client/render/entity/state/LivingEntityRenderState;Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/command/OrderedRenderCommandQueue;Lnet/minecraft/client/render/state/CameraRenderState;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/command/OrderedRenderCommandQueue;submitModel(Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/RenderLayer;IIILnet/minecraft/client/texture/Sprite;ILnet/minecraft/client/render/command/ModelCommandRenderer$CrumblingOverlayCommand;)V"))
     private <S extends LivingEntityRenderState> void gbw$wrapRenderForLightningOverlay(OrderedRenderCommandQueue instance, Model<S> model, Object o, MatrixStack matrixStack, RenderLayer renderLayer, int l, int i, int k, Sprite sprite, int outlineColor, ModelCommandRenderer.CrumblingOverlayCommand crumblingOverlayCommand, Operation<Void> original, @Local(argsOnly = true) S livingEntityRenderState) {
         if (livingEntityRenderState instanceof ExtendedLivingEntityRenderState extended && extended.gbw$isStruckByLightning()) {
-            original.call(instance, model, o, matrixStack, renderLayer, l, Colors.WHITE, k, sprite, outlineColor, crumblingOverlayCommand);
+            original.call(instance, model, o, matrixStack, renderLayer, l, Colors.WHITE, Colors.WHITE, sprite, Colors.WHITE, crumblingOverlayCommand);
         } else original.call(instance, model, o, matrixStack, renderLayer, l, i, k, sprite, outlineColor, crumblingOverlayCommand);
     }
 
