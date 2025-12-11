@@ -1,26 +1,25 @@
 package dev.creoii.lightningflash.util;
 
-import net.minecraft.network.RegistryByteBuf;
-import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.network.packet.CustomPayload;
-import net.minecraft.util.Identifier;
-
 import java.util.UUID;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.resources.Identifier;
 
-public record StruckByLightningS2C(UUID uuid) implements CustomPayload {
-    public static final CustomPayload.Id<StruckByLightningS2C> PACKET_ID = new CustomPayload.Id<>(Identifier.of("great_big_world:struck_by_lightning"));
-    public static final PacketCodec<RegistryByteBuf, StruckByLightningS2C> PACKET_CODEC = PacketCodec.of(StruckByLightningS2C::write, StruckByLightningS2C::new);
+public record StruckByLightningS2C(UUID uuid) implements CustomPacketPayload {
+    public static final CustomPacketPayload.Type<StruckByLightningS2C> PACKET_ID = new CustomPacketPayload.Type<>(Identifier.parse("great_big_world:struck_by_lightning"));
+    public static final StreamCodec<RegistryFriendlyByteBuf, StruckByLightningS2C> PACKET_CODEC = StreamCodec.ofMember(StruckByLightningS2C::write, StruckByLightningS2C::new);
 
-    public StruckByLightningS2C(RegistryByteBuf buf) {
-        this(buf.readUuid());
+    public StruckByLightningS2C(RegistryFriendlyByteBuf buf) {
+        this(buf.readUUID());
     }
 
-    public void write(RegistryByteBuf buf) {
-        buf.writeUuid(uuid);
+    public void write(RegistryFriendlyByteBuf buf) {
+        buf.writeUUID(uuid);
     }
 
     @Override
-    public Id<? extends CustomPayload> getId() {
+    public Type<? extends CustomPacketPayload> type() {
         return PACKET_ID;
     }
 }

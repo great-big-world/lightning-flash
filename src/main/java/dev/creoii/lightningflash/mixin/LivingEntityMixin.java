@@ -4,14 +4,14 @@ import dev.creoii.lightningflash.util.ExtendedLivingEntity;
 import dev.creoii.lightningflash.util.StruckByLightningS2C;
 import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LightningEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.storage.ReadView;
-import net.minecraft.storage.WriteView;
-import net.minecraft.world.World;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LightningBolt;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,21 +23,21 @@ public abstract class LivingEntityMixin extends Entity implements ExtendedLiving
     @Unique
     private int gbw$struckByLightningTime;
 
-    public LivingEntityMixin(EntityType<?> type, World world) {
+    public LivingEntityMixin(EntityType<?> type, Level world) {
         super(type, world);
     }
 
-    @Inject(method = "writeCustomData", at = @At("HEAD"))
-    private void gbw$writeExtendedLivingData(WriteView view, CallbackInfo ci) {
+    @Inject(method = "addAdditionalSaveData", at = @At("HEAD"))
+    private void gbw$writeExtendedLivingData(ValueOutput view, CallbackInfo ci) {
         view.putShort("StruckByLightningTime", (short) gbw$struckByLightningTime);
     }
 
-    @Inject(method = "readCustomData", at = @At("HEAD"))
-    private void gbw$readExtendedLivingData(ReadView view, CallbackInfo ci) {
-        gbw$struckByLightningTime = view.getShort("StruckByLightningTime", (short) 0);
+    @Inject(method = "readAdditionalSaveData", at = @At("HEAD"))
+    private void gbw$readExtendedLivingData(ValueInput view, CallbackInfo ci) {
+        gbw$struckByLightningTime = view.getShortOr("StruckByLightningTime", (short) 0);
     }
 
-    @Inject(method = "baseTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;isDead()Z"))
+    @Inject(method = "baseTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isDeadOrDying()Z"))
     private void gbw$tickExtendedLivingData(CallbackInfo ci) {
         if (gbw$struckByLightningTime > 0) {
             --gbw$struckByLightningTime;
@@ -45,11 +45,11 @@ public abstract class LivingEntityMixin extends Entity implements ExtendedLiving
     }
 
     @Override
-    public void onStruckByLightning(ServerWorld world, LightningEntity lightning) {
-        super.onStruckByLightning(world, lightning);
+    public void thunderHit(ServerLevel world, LightningBolt lightning) {
+        super.thunderHit(world, lightning);
         gbw$struckByLightningTime = 10;
 
-        PlayerLookup.tracking(this).forEach(serverPlayerEntity -> ServerPlayNetworking.send(serverPlayerEntity, new StruckByLightningS2C(getUuid())));
+        PlayerLookup.tracking(this).forEach(serverPlayerEntity -> ServerPlayNetworking.send(serverPlayerEntity, new StruckByLightningS2C(getUUID())));
     }
 
     @Override

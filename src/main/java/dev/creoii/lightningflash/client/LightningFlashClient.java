@@ -13,7 +13,7 @@ public class LightningFlashClient implements ClientModInitializer {
         ClientPlayNetworking.registerGlobalReceiver(StruckByLightningS2C.PACKET_ID, (struckByLightningS2C, context) -> {
             UUID uuid = struckByLightningS2C.uuid();
             context.client().execute(() -> {
-                if (context.client().world.getEntity(uuid) instanceof ExtendedLivingEntity extendedLivingEntity) {
+                if (context.client().level.getEntity(uuid) instanceof ExtendedLivingEntity extendedLivingEntity) {
                     extendedLivingEntity.gbw$setStruckByLightningTime(10);
                 }
             });
