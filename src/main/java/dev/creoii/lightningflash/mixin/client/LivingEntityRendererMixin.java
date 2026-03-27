@@ -25,11 +25,11 @@ public class LivingEntityRendererMixin {
         }
     }
 
-    @WrapOperation(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/model/EntityModel;renderToBuffer(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;III)V"))
-    private <T extends LivingEntity> void gbw$wrapRenderForLightningOverlay(EntityModel<T> instance, PoseStack poseStack, VertexConsumer vertexConsumer, int i, int j, int l, Operation<Void> original, @Local(argsOnly = true) T livingEntity) {
+    @WrapOperation(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/model/EntityModel;renderToBuffer(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFFFF)V"))
+    private <T extends LivingEntity> void gbw$wrapRenderForLightningOverlay(EntityModel instance, PoseStack poseStack, VertexConsumer vertexConsumer, int i, int p, float r, float g, float b, float a, Operation<Void> original, @Local(argsOnly = true) T livingEntity) {
         if (livingEntity instanceof ExtendedLivingEntity extended && extended.gbw$getStruckByLightningTime() > 0) {
-            original.call(instance, poseStack, vertexConsumer, i, j, CommonColors.WHITE);
-        } else original.call(instance, poseStack, vertexConsumer, i, j, l);
+            original.call(instance, poseStack, vertexConsumer, i, p, 255f, 255f, 255f, 1f);
+        } else original.call(instance, poseStack, vertexConsumer, i, p, r, g, b, a);
     }
 
     @Inject(method = "getOverlayCoords", at = @At("HEAD"), cancellable = true)

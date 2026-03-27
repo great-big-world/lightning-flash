@@ -1,24 +1,24 @@
 package dev.creoii.lightningflash.util;
 
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.fabricmc.fabric.api.networking.v1.FabricPacket;
+import net.fabricmc.fabric.api.networking.v1.PacketType;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 
-public record StruckByLightningS2C(int id) implements CustomPacketPayload {
-    public static final CustomPacketPayload.Type<StruckByLightningS2C> PACKET_ID = new CustomPacketPayload.Type<>(ResourceLocation.parse("great_big_world:struck_by_lightning"));
-    public static final StreamCodec<RegistryFriendlyByteBuf, StruckByLightningS2C> PACKET_CODEC = StreamCodec.ofMember(StruckByLightningS2C::write, StruckByLightningS2C::new);
+public record StruckByLightningS2C(int id) implements FabricPacket {
+    public static final ResourceLocation PACKET_ID = ResourceLocation.tryParse("great_big_world:struck_by_lightning");
+    public static final PacketType<StruckByLightningS2C> TYPE = PacketType.create(PACKET_ID, StruckByLightningS2C::new);
 
-    public StruckByLightningS2C(RegistryFriendlyByteBuf buf) {
-        this(buf.readInt());
+    public StruckByLightningS2C(FriendlyByteBuf buf) {
+        this(buf.readVarInt());
     }
 
-    public void write(RegistryFriendlyByteBuf buf) {
-        buf.writeInt(id);
+    public void write(FriendlyByteBuf buf) {
+        buf.writeVarInt(id);
     }
 
     @Override
-    public Type<? extends CustomPacketPayload> type() {
-        return PACKET_ID;
+    public PacketType<?> getType() {
+        return TYPE;
     }
 }
