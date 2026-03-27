@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd2ac683-97ce-4961-828c-1e5112a71581" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/lightning-flash.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/lightning-flash.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/lightning-flash.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/lightning-flash.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/creoii/lightningflash/LightningFlash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/creoii/lightningflash/LightningFlash.java" afterDir="false" />
-    </list>
+    <list default="true" id="bd2ac683-97ce-4961-828c-1e5112a71581" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +33,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "1.21.11",
+    "git-widget-placeholder": "26.1",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/jackr/Documents/Projects/Mods/great-big-world/lightning-flash/build.gradle",
     "project.structure.last.edited": "Project",
