@@ -33,7 +33,7 @@ public abstract class LivingEntityMixin extends Entity implements ExtendedLiving
 
     @Inject(method = "readAdditionalSaveData", at = @At("HEAD"))
     private void gbw$readExtendedLivingData(CompoundTag compoundTag, CallbackInfo ci) {
-        gbw$struckByLightningTime = compoundTag.getShortOr("StruckByLightningTime", (short) 0);
+        gbw$struckByLightningTime = compoundTag.getShort("StruckByLightningTime");
     }
 
     @Inject(method = "baseTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;isDeadOrDying()Z"))
@@ -48,7 +48,7 @@ public abstract class LivingEntityMixin extends Entity implements ExtendedLiving
         super.thunderHit(serverLevel, lightningBolt);
         gbw$struckByLightningTime = 10;
 
-        PlayerLookup.tracking(this).forEach(serverPlayerEntity -> ServerPlayNetworking.send(serverPlayerEntity, new StruckByLightningS2C(getUUID())));
+        PlayerLookup.tracking(this).forEach(serverPlayerEntity -> ServerPlayNetworking.send(serverPlayerEntity, new StruckByLightningS2C(getId())));
     }
 
     @Override

@@ -7,8 +7,7 @@
     "LivingEntityMixin"
   ],
   "client": [
-    "client.LivingEntityRendererMixin",
-    "client.LivingEntityRenderStateMixin"
+    "client.LivingEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
