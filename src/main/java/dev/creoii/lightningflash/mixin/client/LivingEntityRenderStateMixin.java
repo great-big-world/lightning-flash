@@ -1,7 +1,7 @@
 package dev.creoii.lightningflash.mixin.client;
 
 import dev.creoii.lightningflash.util.ExtendedLivingEntityRenderState;
-import net.minecraft.client.render.entity.state.LivingEntityRenderState;
+import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
