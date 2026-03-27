@@ -1,0 +1,2 @@
+/summon minecraft:warden
+/summon minecraft:lightning_bolt

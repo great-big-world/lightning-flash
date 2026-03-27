@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd2ac683-97ce-4961-828c-1e5112a71581" name="Changes" comment="" />
+    <list default="true" id="bd2ac683-97ce-4961-828c-1e5112a71581" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/lightning-flash.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/lightning-flash.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/lightning-flash.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/lightning-flash.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/creoii/lightningflash/LightningFlash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/creoii/lightningflash/LightningFlash.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,16 +28,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3BXjYh6sl19CdNGD8Fi9Xd3EI5O" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.lightning-flash [:net.fabricmc.devlaunchinjector.Main.main()].executor": "Run",
     "Gradle.lightning-flash [build].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -67,6 +78,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.Minecraft Client" />
       <item itemvalue="Application.Minecraft Server" />
       <item itemvalue="Gradle.lightning-flash [build]" />
     </list>
