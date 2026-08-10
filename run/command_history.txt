@@ -1,2 +1,14 @@
 /summon minecraft:warden
 /summon minecraft:lightning_bolt
+/
+/summon minecraft:lightning_bolt
+/summon minecraft:iron_golem
+/summon minecraft:lightning_bolt
+/time set minecraft:night
+/summon minecraft:lightning_bolt
+/summon minecraft:lightning_bolt\
+/summon minecraft:lightning_bolt
+/summon minecraft:lightning_boltw
+/summon minecraft:lightning_bolt
+/summon minecraft:warden
+/summon minecraft:lightning_bolt
