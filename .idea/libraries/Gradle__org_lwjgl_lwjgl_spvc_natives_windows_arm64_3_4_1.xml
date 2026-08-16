@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.lwjgl:lwjgl-spvc:natives-windows-arm64:3.4.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.lwjgl" artifactId="lwjgl-spvc" version="3.4.1" baseVersion="3.4.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-spvc/3.4.1/a60a8d48822ec9449a5de9b6c50e5ed6ae7e8e9f/lwjgl-spvc-3.4.1-natives-windows-arm64.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-spvc/3.4.1/f5a5795ef9b262102520a2591201a94687d088ec/lwjgl-spvc-3.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

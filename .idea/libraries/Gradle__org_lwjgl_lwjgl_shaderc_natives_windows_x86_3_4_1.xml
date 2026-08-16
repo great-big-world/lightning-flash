@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.lwjgl:lwjgl-shaderc:natives-windows-x86:3.4.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.lwjgl" artifactId="lwjgl-shaderc" version="3.4.1" baseVersion="3.4.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-shaderc/3.4.1/cd3ab907c096e27a9024917dcab4379e90c7799d/lwjgl-shaderc-3.4.1-natives-windows-x86.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-shaderc/3.4.1/2073ec554289099bc78f4768a9f533b4d3f2e8bd/lwjgl-shaderc-3.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

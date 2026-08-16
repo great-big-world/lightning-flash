@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: me.shedaniel.cloth:cloth-config-fabric:26.2.155" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="me.shedaniel.cloth" artifactId="cloth-config-fabric" version="26.2.155" baseVersion="26.2.155" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.shedaniel.cloth/cloth-config-fabric/26.2.155/babcf16dbd15e09d326e21ffe85ab3f7d843ef9e/cloth-config-fabric-26.2.155.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.shedaniel.cloth/cloth-config-fabric/26.2.155/4378931f0f9d60d05c27b84e24259e346990b623/cloth-config-fabric-26.2.155-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

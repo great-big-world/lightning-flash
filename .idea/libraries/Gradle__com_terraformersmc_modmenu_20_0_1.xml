@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.terraformersmc:modmenu:20.0.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.terraformersmc" artifactId="modmenu" version="20.0.1" baseVersion="20.0.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.terraformersmc/modmenu/20.0.1/8562dee49eae1a6bdd14b026be1b300aedb5ce0f/modmenu-20.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.terraformersmc/modmenu/20.0.1/fbcd88f07f29f30c9265250cd6a3a5bd263fd64d/modmenu-20.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

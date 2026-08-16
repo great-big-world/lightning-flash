@@ -1,0 +1,9 @@
+{
+  "title.lightningflash.config": "Lightning Flash Configuration",
+  "lightningflash.config.category.general": "General",
+  "lightningflash.config.option.struckByLightningTime": "Struck By Lightning Time",
+  "lightningflash.config.option.struckByLightningTime.value": "%s ticks",
+  "lightningflash.config.option.struckByLightningTime.tooltip": "How long an entity flashes for when struck by lightning",
+  "lightningflash.config.option.lightningFlashColor": "Lightning Flash Color",
+  "lightningflash.config.option.disabled": "Disabled"
+}
