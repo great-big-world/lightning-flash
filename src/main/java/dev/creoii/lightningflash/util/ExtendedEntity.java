@@ -1,6 +1,6 @@
 package dev.creoii.lightningflash.util;
 
-public interface ExtendedLivingEntity {
+public interface ExtendedEntity {
     int gbw$getStruckByLightningTime();
 
     void gbw$setStruckByLightningTime(int struckByLightningTime);

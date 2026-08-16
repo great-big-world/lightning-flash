@@ -14,7 +14,8 @@
   "environment": "*",
   "entrypoints": {
     "main": ["dev.creoii.lightningflash.LightningFlash"],
-    "client": ["dev.creoii.lightningflash.client.LightningFlashClient"]
+    "client": ["dev.creoii.lightningflash.client.LightningFlashClient"],
+    "modmenu": ["dev.creoii.lightningflash.compat.ModMenuIntegration"]
   },
 
   "mixins": [

@@ -4,7 +4,8 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.vertex.PoseStack;
-import dev.creoii.lightningflash.util.ExtendedLivingEntity;
+import dev.creoii.lightningflash.LightningFlash;
+import dev.creoii.lightningflash.util.ExtendedEntity;
 import dev.creoii.lightningflash.util.ExtendedLivingEntityRenderState;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.Model;
@@ -15,7 +16,6 @@ import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
 import net.minecraft.client.renderer.rendertype.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.util.CommonColors;
 import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -36,14 +36,14 @@ public class LivingEntityRendererMixin {
     @WrapOperation(method = "submit(Lnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/level/CameraRenderState;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/SubmitNodeCollector;submitModel(Lnet/minecraft/client/model/Model;Ljava/lang/Object;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/rendertype/RenderType;IIILnet/minecraft/client/renderer/texture/TextureAtlasSprite;ILnet/minecraft/client/renderer/feature/ModelFeatureRenderer$CrumblingOverlay;)V"))
     private <S extends LivingEntityRenderState> void gbw$wrapRenderForLightningOverlay(SubmitNodeCollector instance, Model<S> model, Object o, PoseStack matrixStack, RenderType renderLayer, int l, int i, int k, TextureAtlasSprite sprite, int outlineColor, ModelFeatureRenderer.CrumblingOverlay crumblingOverlayCommand, Operation<Void> original, @Local(argsOnly = true) S livingEntityRenderState) {
         if (livingEntityRenderState instanceof ExtendedLivingEntityRenderState extended && extended.gbw$isStruckByLightning()) {
-            original.call(instance, model, o, matrixStack, renderLayer, l, CommonColors.WHITE, CommonColors.WHITE, sprite, CommonColors.WHITE, crumblingOverlayCommand);
+            original.call(instance, model, o, matrixStack, renderLayer, l, LightningFlash.getLightningFlashColor(), LightningFlash.getLightningFlashColor(), sprite, LightningFlash.getLightningFlashColor(), crumblingOverlayCommand);
         } else original.call(instance, model, o, matrixStack, renderLayer, l, i, k, sprite, outlineColor, crumblingOverlayCommand);
     }
 
     @Inject(method = "extractRenderState(Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/client/renderer/entity/state/LivingEntityRenderState;F)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;"))
     private <T extends LivingEntity, S extends LivingEntityRenderState> void gbw$updateExtendedLivingRenderState(T livingEntity, S livingEntityRenderState, float f, CallbackInfo ci) {
-        if (livingEntityRenderState instanceof ExtendedLivingEntityRenderState extended && livingEntity instanceof ExtendedLivingEntity extendedLivingEntity) {
-            extended.gbw$setStruckByLightning(extendedLivingEntity.gbw$getStruckByLightningTime() > 0);
+        if (livingEntityRenderState instanceof ExtendedLivingEntityRenderState extended && livingEntity instanceof ExtendedEntity extendedEntity) {
+            extended.gbw$setStruckByLightning(extendedEntity.gbw$getStruckByLightningTime() > 0);
         }
     }
 
